@@ -1,0 +1,20 @@
+Iniciar um projeto:
+	Cria o arquivo "package.json" que é responsavel pelas
+	informações da aplicação, inclusive as dependencias.
+yarn init -y
+	
+
+Módulo Express:
+	O Express é um framework do Node que ajuda a gerenciar as rotas de 		requisições e respostas.
+yarn add express
+	
+
+Baixar projeto pronto:
+	Instala todas dependências listadas no package.json
+yarn install
+
+
+
+
+
+

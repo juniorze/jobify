@@ -1,0 +1,26 @@
+{
+  "name": "jobify",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "Uma curta descrição do meu pacote genial",
+  "keywords": [
+    "trabalho",
+    "job",
+    "jobify"
+  ],
+  "homepage": "http://localhost",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juniorze/jobify.git"
+  },
+  "author": {
+    "name": "juniorze",
+    "email": "junior.ze.jw@gmail.com",
+    "url": "https://github.com/juniorze/"
+  },
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "express": "^4.17.1"
+  }
+}
