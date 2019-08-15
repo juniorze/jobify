@@ -2,17 +2,20 @@
 
 <section>
   <h2>Open Roles:</h2>
+  <% categorias.forEach( categorias => { %>
   <section class="job_openings">
-    <h3>Enginnnering team</h3>
+    <h3><%- categorias.categoria %></h3>
     <ul>
       <li><a href="vaga">Fullstack Developer (Remote)</a></li>
     </ul>
   </section>
+  <%}) %> <%/*
   <section class="job_openings">
     <h3>Marketing team</h3>
     <ul>
-      <li>Digital Marketing (Curitiba-PR)</li>
+      <li></li>
     </ul>
   </section>
+  */%>
 </section>
 <%- include('footer') %>
