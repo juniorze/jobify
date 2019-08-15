@@ -5,8 +5,10 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.get("/", (resquest, response) => {
-  //response.send("Olá Mundo");
   response.render("home");
+});
+app.get("/vaga", (resquest, response) => {
+  response.render("vaga");
 });
 
 app.listen(3333, err => {
