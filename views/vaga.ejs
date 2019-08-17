@@ -1,18 +1,9 @@
 <%- include('header') %>
 
 <section>
-  <h2>Fullstack Developer:</h2>
+  <h2><%- vaga.titulo %></h2>
   <section class="job_openings">
-    <h3>Enginnnering team</h3>
-    <ul>
-      <li><a href="vaga">Fullstack Developer (Remote)</a></li>
-    </ul>
-  </section>
-  <section class="job_openings">
-    <h3>Marketing team</h3>
-    <ul>
-      <li>Digital Marketing (Curitiba-PR)</li>
-    </ul>
+    <%- vaga.descricao %>
   </section>
 </section>
 <%- include('footer') %>

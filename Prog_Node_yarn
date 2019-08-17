@@ -13,8 +13,10 @@ Baixar projeto pronto:
 	Instala todas dependências listadas no package.json
 yarn install
 
-
-
-
+Nodemon
+	Nodemon instalado como dependencia de desenvolvimento é tipo de script para 
+    reinicar o servidor node automaticamente a cada alteração no codigo. (Não utilizar em produção)
+	Crie um	"scripts": {"dev": "nodemon src/server.js"}, no packege.json e inicie o servidor com "yarn dev"
+yarn add nodemon -D
 
 

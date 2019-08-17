@@ -19,10 +19,16 @@
     "email": "junior.ze.jw@gmail.com",
     "url": "https://github.com/juniorze/"
   },
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
   "dependencies": {
     "ejs": "^2.6.2",
     "eslint": "^6.1.0",
     "express": "^4.17.1",
     "sqlite": "^3.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }

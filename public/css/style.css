@@ -29,8 +29,6 @@ h2 {
 h3 {
   font-size: 18px;
 }
-.job_openings {
-}
 ul {
   list-style: none;
   padding-left: 16px;
@@ -38,8 +36,10 @@ ul {
 li {
   margin: 0;
 }
-a {
+ul > li > a {
   text-decoration: none;
+  height: 25px;
+  line-height: 25px;
 }
 .card {
   text-align: center;
