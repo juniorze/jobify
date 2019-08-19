@@ -30,7 +30,14 @@ app.get("/vaga/:id", async (request, response) => {
     vaga
   });
 });
-
+app.get("/admin", (req, res) => {
+  res.render("admin/home");
+});
+app.get("/admin/vagas", async (req, res) => {
+  const db = await dbConnection;
+  const vagas = await db.all("select * from vagas;");
+  res.render("admin/vagas");
+});
 const init = async () => {
   const db = await dbConnection;
   await db.run(
@@ -39,18 +46,6 @@ const init = async () => {
   await db.run(
     "create table if not exists vagas (id INTEGER PRIMARY KEY, categoria INTEGER, titulo TEXT, descricao TEXT);"
   );
-  //const categoria = "Engineering team";
-  //await db.run(`insert into categorias(categoria) values('${categoria}')`);
-  //const vaga1 = "Digital Marketing (Curitiba-PR)";
-  //const desc1 = "Vaga para Digital Marketing para trabalhar em Curitiba-PR";
-  //const vaga2 = "Fullstack Developer (Remote)";
-  //const desc2 = "Vaga para Fullstack Developer para trabalhar remoto";
-  //await db.run(
-  //  `insert into vagas(categoria, titulo, descricao) values(1, '${vaga1}', '${desc1}')`
-  //);
-  //await db.run(
-  //  `insert into vagas(categoria, titulo, descricao) values(2, '${vaga2}', '${desc2}')`
-  //);
 };
 init();
 app.listen(3333, err => {
