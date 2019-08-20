@@ -36,7 +36,7 @@ app.get("/admin", (req, res) => {
 app.get("/admin/vagas", async (req, res) => {
   const db = await dbConnection;
   const vagas = await db.all("select * from vagas;");
-  res.render("admin/vagas");
+  res.render("admin/vagas", { vagas });
 });
 const init = async () => {
   const db = await dbConnection;

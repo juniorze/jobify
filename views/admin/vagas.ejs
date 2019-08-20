@@ -1,9 +1,15 @@
 <%- include('header') %>
 
 <section>
-  <h2><%- vaga.titulo %></h2>
-  <section class="job_openings">
-    <%- vaga.descricao %>
-  </section>
+  <h2>Admin Vagas:</h2>
+  <ul>
+    <% vagas.forEach( vaga => { %>
+
+    <li>
+      <%- vaga.titulo %> | <a href="/admin/vagas/<%- vaga.id %>">Excluir</a>
+    </li>
+    <%}) %>
+  </ul>
 </section>
+
 <%- include('footer') %>
