@@ -1,15 +1,20 @@
 <%- include('header') %>
 
 <section>
-  <h2>Admin Vagas:</h2>
-  <ul>
-    <% vagas.forEach( vaga => { %>
-
-    <li>
-      <%- vaga.titulo %> | <a href="/admin/vagas/<%- vaga.id %>">Excluir</a>
-    </li>
-    <%}) %>
-  </ul>
+  <h2 class="button_add">
+    Admin Vagas:
+    <a href="/admin/vagas/add">Nova Vaga</a></li>
+  </h2>
+  <section class="button_del">
+    <ul>
+      <% vagas.forEach( vaga => { %>
+      <li>
+        <%- vaga.titulo %>
+        <a href="/admin/vagas/delete/<%- vaga.id %>">Excluir</a>
+      </li>
+      <%}) %>
+    </ul>
+  </section>
 </section>
 
 <%- include('footer') %>

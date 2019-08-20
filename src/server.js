@@ -17,18 +17,14 @@ app.get("/", async (request, response) => {
       vagas: vagas.filter(vaga => vaga.categoria === cat.id)
     };
   });
-  response.render("home", {
-    categorias
-  });
+  response.render("home", { categorias });
 });
 app.get("/vaga/:id", async (request, response) => {
   const db = await dbConnection;
   const vaga = await db.get(
     "select * from vagas where id = " + request.params.id
   );
-  response.render("vaga", {
-    vaga
-  });
+  response.render("vaga", { vaga });
 });
 app.get("/admin", (req, res) => {
   res.render("admin/home");
@@ -38,6 +34,16 @@ app.get("/admin/vagas", async (req, res) => {
   const vagas = await db.all("select * from vagas;");
   res.render("admin/vagas", { vagas });
 });
+
+app.get("/admin/vagas/delete/:id", async (req, res) => {
+  const db = await dbConnection;
+  await db.run("delete from vagas where id = " + req.params.id);
+  res.redirect("/admin/vagas");
+});
+app.get("/admin/vagas/add", async (req, res) => {
+  res.render("admin/add_nova");
+});
+
 const init = async () => {
   const db = await dbConnection;
   await db.run(
