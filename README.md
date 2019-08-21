@@ -32,3 +32,4 @@ Instale o nodejs e o yarn (exemplo no Linux/Debian):
 
 ## Ir para o navegador
      http://localhost:3333/ or http://localhost:3333/admin para administrador.
+

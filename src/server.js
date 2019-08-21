@@ -107,9 +107,7 @@ app.post("/admin/categorias/edite/:id", async (req, res) => {
   const { categoria } = req.body;
   const { id } = req.params;
   const db = await dbConnection;
-  await db.run(
-    `update categorias set categoria='${categoria}' where id =${id}`
-  );
+  await db.run(`update categorias set categoria='${categoria}' where id =${id}`);
   res.redirect("/admin/categorias");
 });
 
