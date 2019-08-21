@@ -1,11 +1,13 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
 
 const sqlite = require("sqlite");
 const dbConnection = sqlite.open("banco.sqlite", { Promise });
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", async (request, response) => {
   const db = await dbConnection;
@@ -41,7 +43,33 @@ app.get("/admin/vagas/delete/:id", async (req, res) => {
   res.redirect("/admin/vagas");
 });
 app.get("/admin/vagas/add", async (req, res) => {
-  res.render("admin/add_nova");
+  const db = await dbConnection;
+  const categorias = await db.all("select * from categorias");
+  res.render("admin/add_nova", { categorias });
+});
+app.post("/admin/vagas/add", async (req, res) => {
+  const { titulo, descricao, categoria } = req.body;
+  const db = await dbConnection;
+  await db.run(
+    `insert into vagas(categoria, titulo, descricao) values(${categoria}, '${titulo}', '${descricao}')`
+  );
+  res.redirect("/admin/vagas");
+});
+
+app.get("/admin/vagas/edite/:id", async (req, res) => {
+  const db = await dbConnection;
+  const categorias = await db.all("select * from categorias");
+  const vaga = await db.get("select * from vagas where id = " + req.params.id);
+  res.render("admin/edite_vaga", { categorias, vaga });
+});
+app.post("/admin/vagas/edite/:id", async (req, res) => {
+  const { titulo, descricao, categoria } = req.body;
+  const { id } = req.params;
+  const db = await dbConnection;
+  await db.run(
+    `update vagas set categoria=${categoria}, titulo='${titulo}', descricao='${descricao}' where id =${id}`
+  );
+  res.redirect("/admin/vagas");
 });
 
 const init = async () => {
