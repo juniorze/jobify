@@ -1,22 +1,20 @@
-Iniciar um projeto:
-	Cria o arquivo "package.json" que é responsavel pelas
-	informações da aplicação, inclusive as dependencias.
+Iniciar um projeto:  
+	Cria o arquivo "package.json" que é responsavel pelas  
+	informações da aplicação, inclusive as dependencias.  
 yarn init -y
 	
 
-Módulo Express:
-	O Express é um framework do Node que ajuda a gerenciar as rotas de 		requisições e respostas.
-yarn add express
+Módulo Express:  
+	O Express é um framework do Node que ajuda a gerenciar as rotas de requisições e respostas.  
+yarn add express  
 	
 
-Baixar projeto pronto:
-	Instala todas dependências listadas no package.json
-yarn install
+Baixar projeto pronto:  
+	Instala todas dependências listadas no package.json  
+yarn install  
 
-Nodemon
-	Nodemon instalado como dependencia de desenvolvimento é tipo de script para 
-    reinicar o servidor node automaticamente a cada alteração no codigo. (Não utilizar em produção)
-	Crie um	"scripts": {"dev": "nodemon src/server.js"}, no packege.json e inicie o servidor com "yarn dev"
+Nodemon  
+	Nodemon instalado como dependencia de desenvolvimento é tipo de script para  
+    reinicar o servidor node automaticamente a cada alteração no codigo. (Não utilizar em produção)  
+	Crie um	"scripts": {"dev": "nodemon src/server.js"}, no packege.json e inicie o servidor com "yarn dev"  
 yarn add nodemon -D
-
-
