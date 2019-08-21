@@ -74,6 +74,45 @@ app.post("/admin/vagas/edite/:id", async (req, res) => {
   res.redirect("/admin/vagas");
 });
 
+app.get("/admin/categorias", async (req, res) => {
+  const db = await dbConnection;
+  const categorias = await db.all("select * from categorias;");
+  res.render("admin/categorias", { categorias });
+});
+app.get("/admin/categorias/delete/:id", async (req, res) => {
+  const db = await dbConnection;
+  await db.run("delete from categorias where id = " + req.params.id);
+  res.redirect("/admin/categorias");
+});
+app.get("/admin/categorias/add", async (req, res) => {
+  const db = await dbConnection;
+  const categorias = await db.all("select * from categorias");
+  res.render("admin/add_categoria", { categorias });
+});
+app.post("/admin/categorias/add", async (req, res) => {
+  const { categoria } = req.body;
+  const db = await dbConnection;
+  await db.run(`insert into categorias(categoria) values('${categoria}')`);
+  res.redirect("/admin/categorias");
+});
+
+app.get("/admin/categorias/edite/:id", async (req, res) => {
+  const db = await dbConnection;
+  const categoria = await db.get(
+    "select * from categorias where id = " + req.params.id
+  );
+  res.render("admin/edite_categoria", { categoria });
+});
+app.post("/admin/categorias/edite/:id", async (req, res) => {
+  const { categoria } = req.body;
+  const { id } = req.params;
+  const db = await dbConnection;
+  await db.run(
+    `update categorias set categoria='${categoria}' where id =${id}`
+  );
+  res.redirect("/admin/categorias");
+});
+
 const init = async () => {
   const db = await dbConnection;
   await db.run(

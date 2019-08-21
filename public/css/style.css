@@ -112,7 +112,11 @@ li > a[href*="edite"]:hover {
   height: 24px;
   padding: 0px 12px;
   text-decoration: none;
-  text-shadow: 0;
+  text-shadow: 0px 0px 0px #5b6178;
+}
+.job_description {
+  max-width: 400px;
+  padding-left: 5px;
 }
 .formulario {
   height: 500px;
