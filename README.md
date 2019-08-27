@@ -6,7 +6,7 @@ I started to make some modifications in the graphic part (CSS), it is not finish
 
 ## How to use:
 Install the nodejs and yarn (example in Linux/Debian):  
-```Bash
+```sh
 sudo apt install nodejs yarn -y
 git clone https://github.com/juniorze/jobify.git
 cd jobify
@@ -23,7 +23,7 @@ Comecei a realizar algumas modificações na parte gráfica (CSS), *ainda não e
 
 ## Como usar:
 Instale o nodejs e o yarn (exemplo no Linux/Debian):
-```Bash
+```sh
 sudo apt install nodejs yarn -y  
 git clone https://github.com/juniorze/jobify.git  
 cd jobify  
