@@ -6,13 +6,13 @@ I started to make some modifications in the graphic part (CSS), it is not finish
 
 ## How to use:
 Install the nodejs and yarn (example in Linux/Debian):  
-    ```bash
-    sudo apt install nodejs yarn -y  
-    git clone https://github.com/juniorze/jobify.git  
-    cd jobify  
-    yarn install  
-    node src/server.js  
-    ```
+```Bash
+sudo apt install nodejs yarn -y
+git clone https://github.com/juniorze/jobify.git
+cd jobify
+yarn install
+node src/server.js
+```
 ## Go to browser
     http://localhost:3333/ or http://localhost:3333/admin for administrator.   
 __________________________________________________________________________________________________
@@ -23,13 +23,13 @@ Comecei a realizar algumas modificações na parte gráfica (CSS), *ainda não e
 
 ## Como usar:
 Instale o nodejs e o yarn (exemplo no Linux/Debian):
-    ```bash
-    sudo apt install nodejs yarn -y  
-    git clone https://github.com/juniorze/jobify.git  
-    cd jobify  
-    yarn install  
-    node src/server.js 
-    ```
+```Bash
+sudo apt install nodejs yarn -y  
+git clone https://github.com/juniorze/jobify.git  
+cd jobify  
+yarn install  
+node src/server.js 
+```
 ## Ir para o navegador
      http://localhost:3333/ or http://localhost:3333/admin para administrador.
 
